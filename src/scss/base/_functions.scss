@@ -1,0 +1,27 @@
+
+@function px-to-rem($px, $base-font-size: 16px) {
+  @return #{$px / $base-font-size}rem;
+}
+
+@function map-get-deep($map, $keys...) {
+  $value: $map;
+
+  @each $key in $keys {
+    $value: map-get($value, $key);
+  }
+
+  @return $value;
+}
+
+@function contrast($color) {
+  $r: red($color);
+  $g: green($color);
+  $b: blue($color);
+  $brightness: ($r * 299 + $g * 587 + $b * 114) / 1000;
+
+  @if ($brightness > 128) {
+    @return black;
+  } @else {
+    @return white;
+  }
+}
