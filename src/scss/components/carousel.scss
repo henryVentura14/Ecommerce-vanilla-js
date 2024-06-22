@@ -1,0 +1,26 @@
+// src/scss/styles.scss
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  margin: 20px auto;
+}
+
+.products-carousel {
+  display: flex;
+  overflow: hidden;
+  width: 300px;
+  margin: 0 auto;
+}
+
+.product {
+  flex: 0 0 100%;
+  display: none; /* Escondemos todos los productos al inicio */
+  text-align: center;
+}
+
+.product img {
+  max-width: 100%;
+  height: auto;
+}

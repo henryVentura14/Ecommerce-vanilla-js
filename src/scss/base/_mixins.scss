@@ -1,0 +1,33 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin respond-to($size) {
+  @media (min-width: breakpoint($size)) {
+    @content;
+  }
+}
+
+@mixin button-states($bg-color, $color) {
+  background-color: $bg-color;
+  color: $color;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darken($bg-color, 10%);
+  }
+
+  &:active {
+    background-color: lighten($bg-color, 10%);
+  }
+
+  &:disabled {
+    background-color: lighten($bg-color, 20%);
+    cursor: not-allowed;
+  }
+}
