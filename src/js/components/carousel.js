@@ -17,33 +17,77 @@ export default class Carousel {
       const productElement = document.createElement("div");
       productElement.className = "product";
       productElement.innerHTML = `
-        <h2>${product.title}</h2>
-        <img src="${product.featuredImage.url}" alt="${product.title}">
-        <p>Price: ${product.prices.min.amount} ${product.prices.min.currencyCode}</p>
-        <p>Inventory: ${product.totalInventory}</p>
+        <div class="content-img">
+          <img src="${product.featuredImage.url}" alt="${product.title}">
+        </div>
+        <div class="content-btn">
+          <button class="btn card">Add to cart</button>
+        </div>
+        <h3>${product.title} x${product.totalInventory}</h3>
+        <div class="content-rating">
+          <p class="stars">${this.renderStars(product.tags)} <span class="tags">(${product.tags.filter(tag => !isNaN(tag)).join(', ')})</span></p>
+          <p>${this.getPriceDisplay(product.prices)}</p>
+        </div>
       `;
       this.container.appendChild(productElement);
     });
 
-    this.showProduct(this.currentIndex);
-    this.nextButton.addEventListener("click", () => this.nextProduct());
-    this.prevButton.addEventListener("click", () => this.prevProduct());
+    this.nextButton.addEventListener("click", () => this.scrollNext());
+    this.prevButton.addEventListener("click", () => this.scrollPrev());
   }
 
-  showProduct(index) {
-    const products = this.container.querySelectorAll(".product");
-    products.forEach((product, i) => {
-      product.style.display = i === index ? "block" : "none";
+  getPriceDisplay(prices) {
+    if (prices.min.amount === prices.max.amount) {
+      return `<span class="price">${this.getCurrencySymbol(prices.min.currencyCode)} ${this.formatPrice(prices.min.amount)}</span>`;
+    } else {
+      return `
+        <span class="price">${this.getCurrencySymbol(prices.max.currencyCode)} ${this.formatPrice(prices.max.amount)}</span>
+        <span class="price old-price"> ${this.getCurrencySymbol(prices.min.currencyCode)} ${this.formatPrice(prices.min.amount)}</span>
+      `;
+    }
+  }
+
+  formatPrice(amount) {
+    return parseFloat(amount).toFixed(2);
+  }
+
+  getCurrencySymbol(currencyCode) {
+    switch (currencyCode) {
+      case "EUR":
+        return "€";
+      default:
+        return currencyCode;
+    }
+  }
+
+  renderStars(tags) {
+    const numericTags = tags.filter(tag => !isNaN(tag)).map(Number);
+    if (numericTags.length === 0) return 'No ratings';
+  
+    const average = numericTags.reduce((acc, tag) => acc + tag, 0) / numericTags.length;
+    const starsCount = Math.min(Math.max(Math.floor(average / 100), 1), 5);
+  
+    let starsHTML = '';
+    for (let i = 0; i < starsCount; i++) {
+      starsHTML += `<img class="star-icon" src="https://svgshare.com/i/17Wx.svg" alt="star">`; 
+    }
+    for (let i = starsCount; i < 5; i++) {
+      starsHTML += `<img  src="https://svgshare.com/i/17Wn.svg" alt="star">`;
+    }
+    return starsHTML;
+  }
+
+  scrollNext() {
+    this.container.scrollBy({
+      left: this.container.offsetWidth,
+      behavior: "smooth"
     });
   }
 
-  nextProduct() {
-    this.currentIndex = (this.currentIndex + 1) % this.totalProducts;
-    this.showProduct(this.currentIndex);
-  }
-
-  prevProduct() {
-    this.currentIndex = (this.currentIndex - 1 + this.totalProducts) % this.totalProducts;
-    this.showProduct(this.currentIndex);
+  scrollPrev() {
+    this.container.scrollBy({
+      left: -this.container.offsetWidth,
+      behavior: "smooth"
+    });
   }
 }

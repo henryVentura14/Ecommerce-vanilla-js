@@ -1,7 +1,5 @@
 .header {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  @include flex(space-evenly, center, row);
   color: $dark;
   height: 200px;
   .decoration {
@@ -28,40 +26,32 @@
     }
   }
   .controls {
-    display: flex;
+    @include flex(space-between, center, row);
     width: 150px;
-    justify-content: space-between;
-    .control {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    .content-control {
+      @include flex(center, center, row);
       width: 70px;
       height: 24px;
       border-radius: 100px;
       background-color: $primary;
-      .btn {
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        border: none;
-        background-color: white;
-        box-shadow: 0px 4px 50px 0px #00000040;
-        cursor: pointer;
-        .next {
-          content: "";
-          font-size: 0;
-          &::before {
-            content: url("../assets/images/next.svg");
-          }
-        }
-        .prev {
-          content: "";
-          font-size: 0;
-          &::before {
-            content: url("../assets/images/prev.svg");
-          }
-        }
-      }
+
     }
   }
+  @include respond-to(md) {
+    padding: 0 40px;
+    @include flex(flex-start, flex-start, column);
+    height: auto;
+  }
+  @include respond-to(sm) {
+    padding: 0 20px;
+    .title-section {
+      font-size: 28px;
+      line-height: 35px;
+    }
+    .decoration {
+      top: 75px;
+      left: -2px;
+    }
+  }
+
 }

@@ -1,26 +1,89 @@
-// src/scss/styles.scss
-
-.controls {
-  display: flex;
-  justify-content: space-between;
-  width: 100px;
-  margin: 20px auto;
-}
-
 .products-carousel {
-  display: flex;
-  overflow: hidden;
-  width: 300px;
-  margin: 0 auto;
-}
+  @include flex(flex-start, center, row);
+  margin: 20px ;
+  overflow-x: hidden;
+  padding-top: 20px;
+  scroll-snap-type: x mandatory;
 
-.product {
-  flex: 0 0 100%;
-  display: none; /* Escondemos todos los productos al inicio */
-  text-align: center;
-}
+  .product {
+    flex: 0 0 auto;
+    margin-right: 10px;
+    margin-left: 10px;
+    scroll-snap-align: start;
+    text-align: center;
+    max-width: 320px;
+    font-family: "FilsonProRegular";
 
-.product img {
-  max-width: 100%;
-  height: auto;
+    h3 {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+      color: $dark;
+      margin-top: -10px;
+      text-align: left;
+    }
+
+    .content-img {
+      width: 320px;
+      height: auto;
+      border-radius: 15px;
+      img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        border: none;
+        border-radius: 15px;
+      }
+    }
+
+    .content-btn {
+      position: relative;
+      top: -60px;
+    }
+
+    .stars {
+      @include flex(center, center, row);
+      gap: 5px;
+
+      svg {
+        width: 17px;
+        height: 16px;
+      }
+    }
+    
+    .star-icon {
+      width: 20px;
+      height: 19px;
+    }
+    
+    .content-rating {
+      @include flex(space-between, center, row);
+      padding: 0 10px;
+
+      .price {
+        color: $dark;
+        font-size: 15px;
+        font-weight: 500;
+        text-align: right;
+        line-height: 27px;
+        &.old-price {
+          color: $dark-secondary; 
+          text-decoration: line-through; 
+        }
+      }
+
+      .tags {
+        color: $dark-secondary;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 20px;
+        margin-top: 2px;
+      }
+    }
+  }
+  @include respond-to(sm) {
+    .product, .content-img{
+      max-width: 275px;
+    }
+  }
 }

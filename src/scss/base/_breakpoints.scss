@@ -12,7 +12,7 @@ $breakpoints: (
 }
 
 @mixin respond-to($size) {
-  @media (min-width: breakpoint($size)) {
+  @media (max-width: breakpoint($size)) {
     @content;
   }
 }

@@ -1,0 +1,6 @@
+.central-section {
+  @include flex(center, center, row);
+  height: auto;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
