@@ -1,13 +1,17 @@
 .hero-banner {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center, column);
   background-color: $primary;
   color: $dark;
-  .title {
+  .hero-title {
     font-family: "Abhaya Libre", serif;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 13px;
     line-height: 18px;
+    letter-spacing: 1px;
+    @include respond-to(sm) {
+      font-family: "NeogroteskEssRegular", serif;
+      font-size: 13px;
+      font-weight: 700;
+    }
   }
 }

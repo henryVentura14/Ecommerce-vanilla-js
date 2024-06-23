@@ -7,9 +7,8 @@
     <title>Henry Ventura e-commerce</title>
   </head>
   <body>
-    <main id="root">
       <div class="hero-banner">
-        <h3>Gratis verzending vanaf €30</h3>
+        <h3 class="hero-title">Gratis verzending vanaf €30</h3>
       </div>
       <header class="header">
         <div class="title-section">
@@ -32,40 +31,30 @@
         <button title="button" type="button" class="btn hero">Browse all products</button>
       </section>
       <footer class="footer">
-        <img class="tablet-blurred" src="assets/images/tablet-blurred.png" alt="pilule de bain">
-        <img class="tablet-green" src="assets/images/tablet-green.png" alt="pilule de bain">
-        <img class="tablet-rose" src="assets/images/tablet-rose.png" alt="pilule de bain">
-        <svg
-          class="footer-curve"
-          width="100%"
-          height="auto"
-          viewBox="0 0 1440 550"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M1046.78 84.2501C839.09 84.2501 839.09 0 631.427 0C423.794 0 423.794 84.2501 216.13 84.2501C106.685 84.2501 54.8932 60.8592 0 38.7124V550H1440V0.355453C1254.23 6.11432 1246.79 84.2501 1046.78 84.2501Z"
-            fill="#CAF0FF"
-          />
-        </svg>
+        <img class="tablet-blurred" src="assets/images/tablet-blurred.png" alt="pilule de bain"/>
+        <img class="tablet-green" src="assets/images/tablet-green.png" alt="pilule de bain"/>
+        <img class="tablet-rose" src="assets/images/tablet-rose.png" alt="pilule de bain"/>
         <section class="newsletter">
-          <h3 class="newsletter-title">Join the green revolution without<span class="break"> commitment</span></h3>
-          <p class="newsletter-info">
+          <h3 class="newsletter-title desktop">Join the green revolution without<span class="break"> commitment</span></h3>
+          <p class="newsletter-info desktop">
             If you are missing something and don't want to miss future<span class="break">
-              promotions or our future products</span
-            >
+              promotions or our future products</span>
+          </p>
+          <h3 class="newsletter-title mobile">Join the green revolution <span class="break"></span> without commitment</h3>
+          <p class="newsletter-info mobile">
+            If you are missing something and don't want <span class="break"> to miss future
+              promotions or our future</span> <span class="break"></span> products
           </p>
           <form id="newsletter-form" class="newsletter-form">
-            <input type="email" id="email" class="newsletter-input" placeholder="Your email" required />
+            <input type="text" id="email" class="newsletter-input" placeholder="Your email"/>
             <button type="submit" class="btn newsletter">Send</button>
           </form>
-          <div id="message"></div>
-        </section>
-        <img class="tablet-blue" src="assets/images/tablet-blue.png" alt="pilule de bain">
-        <img class="tablet-white" src="assets/images/tablet-white.png" alt="pilule de bain">
+          <div id="message" class="message"></div>
 
+        </section>
+        <img class="tablet-blue" src="assets/images/tablet-blue.png" alt="pilule de bain"/>
+        <img class="tablet-white" src="assets/images/tablet-white.png" alt="pilule de bain"/>
       </footer>
-    </main>
     <script src="../dist/bundle.js"></script>
   </body>
 </html>

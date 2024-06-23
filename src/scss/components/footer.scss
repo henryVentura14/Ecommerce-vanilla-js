@@ -1,24 +1,19 @@
 .footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center, row);
   position: relative;
   overflow: hidden;
   min-height: 550px;
+  width: 100%;
+  background: url("../assets/svg/footer.svg");
+  background-size: cover;
+
   .footer-curve {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    z-index: -1;
-    padding-bottom: 500px;
+    display: none;
   }
+
   .newsletter {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex(center, center, column);
+    z-index: 3;
     .newsletter-title {
       font-family: "Abhaya Libre", serif;
       font-weight: 700;
@@ -27,10 +22,19 @@
       text-align: center;
       color: $dark;
       margin-bottom: 0;
+
       .break {
         display: block;
       }
+
+      @include respond-to(sm) {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 36px;
+        text-align: center;
+      }
     }
+
     .newsletter-info {
       font-family: "FilsonProLight", serif;
       color: $dark-secondary;
@@ -38,15 +42,21 @@
       font-weight: 350;
       font-size: 15px;
       line-height: 27px;
+
       .break {
         display: block;
       }
     }
+
     .newsletter-form {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex(space-between, center, row);
       width: 510px;
+      @include respond-to(sm) {
+        @include flex(space-between, center, column);
+        width: 300px;
+        height: 120px;
+      }
+
       .newsletter-input {
         font-family: "FilsonProBold", serif;
         border-radius: 100px;
@@ -55,38 +65,114 @@
         height: 48px;
         padding-left: 20px;
         font-size: 15px;
-        list-style: 27px;
         color: $dark;
         outline: none;
+
         :focus {
           outline: none;
         }
+
+        @include respond-to(sm) {
+          width: 300px;
+        }
+      }
+ 
+    }
+
+    .message {
+      font-family: "FilsonProLight", serif;
+      font-size: 14px;
+      line-height: 18px;
+      margin-top: 10px;
+      opacity: 0;
+      height: 10px;
+      &.success {
+        color: $success;
+        opacity: 1;
+      }
+      &.error {
+        color: $error;
+        opacity: 1;
       }
     }
+
   }
-  .tablet-blurred{
-    position: relative;
-    top: 80px;
-    left: -180px;
+
+  .tablet-blurred {
+    position: absolute;
+    top: 55%;
+    left: 5%;
   }
-  .tablet-green{
-    position: relative;
-    top: -120px;
-    left: -190px;
+
+  .tablet-green {
+    position: absolute;
+    top: 20%;
+    left: 10%;
   }
-  .tablet-rose{
-    position: relative;
-    top: -100px;
-    left: -50px;
+
+  .tablet-rose {
+    position: absolute;
+    top: 25%;
+    left: 20%;
   }
-  .tablet-blue{
-    position: relative;
-    top: 80px;
-    right: -180px;
+
+  .tablet-blue {
+    position: absolute;
+    top: 55%;
+    right: 15%;
   }
-  .tablet-white{
-    position: relative;
-    top: -80px;
-    right: -220px;
+
+  .tablet-white {
+    position: absolute;
+    top: 15%;
+    right: 5%;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  .mobile {
+    display: none;
+  }
+
+  @include respond-to(sm) {
+    .mobile {
+      display: block;
+    }
+
+    .desktop {
+      display: none;
+    }
+
+    .tablet-blurred {
+      top: 25%;
+      left: -10%;
+      transform: scale(0.7);
+    }
+
+    .tablet-green {
+      top: 10%;
+      left: 10%;
+      transform: scale(0.7);
+    }
+
+    .tablet-rose {
+      top: 15%;
+      left: 35%;
+      transform: scale(0.7);
+    }
+
+    .tablet-blue {
+      top: 48%;
+      right: 15%;
+      transform: scale(0.7);
+    }
+
+    .tablet-white {
+      top: 32%;
+      right: 5%;
+      transform: scale(0.7);
+    }
   }
 }

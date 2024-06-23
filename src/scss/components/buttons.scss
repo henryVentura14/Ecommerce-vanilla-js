@@ -15,6 +15,9 @@
   &.card {
     background-color: rgba(255, 255, 255, 0.9);
     color: $tertiary;
+    @include respond-to(sm) {
+      max-width: calc(100% - 20px);
+    }
   }
   &.hero {
     background-color: $tertiary;
@@ -25,6 +28,9 @@
     background-color: $tertiary;
     color: white;
     width: 120px;
+    @include respond-to(sm) {
+      width: 200px;
+    }
   }
   &.control {
     width: 40px;
@@ -52,4 +58,5 @@
   &:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
+
 }

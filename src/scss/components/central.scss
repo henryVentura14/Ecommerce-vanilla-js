@@ -1,7 +1,5 @@
 .central-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex(center, center, row);
   height: auto;
   padding-bottom: 50px;
   padding-top: 50px;

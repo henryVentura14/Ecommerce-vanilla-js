@@ -1,9 +1,8 @@
 .products-carousel {
-  display: flex;
-  width: 100%;
-  margin: 0 auto;
+  @include flex(flex-start, center, row);
+  margin: 20px ;
   overflow-x: hidden;
-  padding-top: 40px;
+  padding-top: 20px;
   scroll-snap-type: x mandatory;
 
   .product {
@@ -27,12 +26,13 @@
     .content-img {
       width: 320px;
       height: auto;
-
+      border-radius: 15px;
       img {
         width: 100%;
         height: 100%;
         display: block;
-        border: 0;
+        border: none;
+        border-radius: 15px;
       }
     }
 
@@ -42,8 +42,7 @@
     }
 
     .stars {
-      display: flex;
-      align-items: center;
+      @include flex(center, center, row);
       gap: 5px;
 
       svg {
@@ -58,9 +57,7 @@
     }
     
     .content-rating {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex(space-between, center, row);
       padding: 0 10px;
 
       .price {
@@ -82,6 +79,11 @@
         line-height: 20px;
         margin-top: 2px;
       }
+    }
+  }
+  @include respond-to(sm) {
+    .product, .content-img{
+      max-width: 275px;
     }
   }
 }
