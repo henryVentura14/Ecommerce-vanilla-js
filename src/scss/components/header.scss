@@ -1,0 +1,57 @@
+.header {
+  @include flex(space-evenly, center, row);
+  color: $dark;
+  height: 200px;
+  .decoration {
+    position: relative;
+    background-color: $soft-blue;
+    width: 70px;
+    height: 24px;
+    z-index: -1;
+    border-radius: 100px;
+    top: 120px;
+    left: -15px;
+  }
+  .title-section {
+    font-size: 44px;
+    line-height: 64px;
+    font-weight: 700;
+    .planet-friendly {
+      display: inline;
+    }
+
+    .line-break::after {
+      content: "\A";
+      white-space: pre;
+    }
+  }
+  .controls {
+    @include flex(space-between, center, row);
+    width: 150px;
+    .content-control {
+      @include flex(center, center, row);
+      width: 70px;
+      height: 24px;
+      border-radius: 100px;
+      background-color: $primary;
+
+    }
+  }
+  @include respond-to(md) {
+    padding: 0 40px;
+    @include flex(flex-start, flex-start, column);
+    height: auto;
+  }
+  @include respond-to(sm) {
+    padding: 0 20px;
+    .title-section {
+      font-size: 28px;
+      line-height: 35px;
+    }
+    .decoration {
+      top: 75px;
+      left: -2px;
+    }
+  }
+
+}
