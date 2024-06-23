@@ -1,0 +1,48 @@
+.btn {
+  font-family: "NeogroteskEssRegular";
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  font-weight: 700;
+  background-color: $primary;
+  color: white;
+  text-transform: uppercase;
+  border: none;
+  width: 297px;
+  height: 48px;
+  padding: 12px, 32px, 12px, 40px;
+  gap: 8px;
+  border-radius: 100px;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+  &.card {
+    background-color: white;
+    color: $primary;
+  }
+  &.control {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: white;
+    font-size: 0;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+    line-height: 0px;
+    text-align: center;
+    &.next {
+      &::before {
+        content: url("../assets/images/next.svg");
+      }
+    }
+    &.prev {
+      &::before {
+        content: url("../assets/images/prev.svg");
+      }
+    }
+    &:focus {
+      outline: none;
+    }
+  }
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}

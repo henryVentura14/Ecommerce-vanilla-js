@@ -17,33 +17,34 @@ export default class Carousel {
       const productElement = document.createElement("div");
       productElement.className = "product";
       productElement.innerHTML = `
-        <h2>${product.title}</h2>
-        <img src="${product.featuredImage.url}" alt="${product.title}">
+        <div class="content-img">
+          <img src="${product.featuredImage.url}" alt="${product.title}">
+        </div>
+        <div class="content-btn">
+          <button class="btn card">Add to cart</button>
+        </div>
+
+        <h3>${product.title} x${product.totalInventory}</h3>
         <p>Price: ${product.prices.min.amount} ${product.prices.min.currencyCode}</p>
-        <p>Inventory: ${product.totalInventory}</p>
       `;
       this.container.appendChild(productElement);
     });
 
-    this.showProduct(this.currentIndex);
-    this.nextButton.addEventListener("click", () => this.nextProduct());
-    this.prevButton.addEventListener("click", () => this.prevProduct());
+    this.nextButton.addEventListener("click", () => this.scrollNext());
+    this.prevButton.addEventListener("click", () => this.scrollPrev());
   }
 
-  showProduct(index) {
-    const products = this.container.querySelectorAll(".product");
-    products.forEach((product, i) => {
-      product.style.display = i === index ? "block" : "none";
+  scrollNext() {
+    this.container.scrollBy({
+      left: this.container.offsetWidth,
+      behavior: "smooth"
     });
   }
 
-  nextProduct() {
-    this.currentIndex = (this.currentIndex + 1) % this.totalProducts;
-    this.showProduct(this.currentIndex);
-  }
-
-  prevProduct() {
-    this.currentIndex = (this.currentIndex - 1 + this.totalProducts) % this.totalProducts;
-    this.showProduct(this.currentIndex);
+  scrollPrev() {
+    this.container.scrollBy({
+      left: -this.container.offsetWidth,
+      behavior: "smooth"
+    });
   }
 }

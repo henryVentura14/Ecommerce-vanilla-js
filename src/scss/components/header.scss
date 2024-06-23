@@ -31,7 +31,7 @@
     display: flex;
     width: 150px;
     justify-content: space-between;
-    .control {
+    .content-control {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -39,29 +39,7 @@
       height: 24px;
       border-radius: 100px;
       background-color: $primary;
-      .btn {
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        border: none;
-        background-color: white;
-        box-shadow: 0px 4px 50px 0px #00000040;
-        cursor: pointer;
-        .next {
-          content: "";
-          font-size: 0;
-          &::before {
-            content: url("../assets/images/next.svg");
-          }
-        }
-        .prev {
-          content: "";
-          font-size: 0;
-          &::before {
-            content: url("../assets/images/prev.svg");
-          }
-        }
-      }
+
     }
   }
 }
