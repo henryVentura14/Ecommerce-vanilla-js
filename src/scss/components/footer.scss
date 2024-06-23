@@ -1,3 +1,92 @@
-.footer{
-    background-color: $soft-blue;
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 550px;
+  .footer-curve {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    padding-bottom: 500px;
+  }
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .newsletter-title {
+      font-family: "Abhaya Libre", serif;
+      font-weight: 700;
+      line-height: 62px;
+      font-size: 44px;
+      text-align: center;
+      color: $dark;
+      margin-bottom: 0;
+      .break {
+        display: block;
+      }
+    }
+    .newsletter-info {
+      font-family: "FilsonProLight", serif;
+      color: $dark-secondary;
+      text-align: center;
+      font-weight: 350;
+      font-size: 15px;
+      line-height: 27px;
+      .break {
+        display: block;
+      }
+    }
+    .newsletter-form {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 510px;
+      .newsletter-input {
+        font-family: "FilsonProBold", serif;
+        border-radius: 100px;
+        border: 1px solid $tertiary;
+        width: 360px;
+        height: 48px;
+        padding-left: 20px;
+        font-size: 15px;
+        list-style: 27px;
+        color: $dark;
+        outline: none;
+        :focus {
+          outline: none;
+        }
+      }
+    }
+  }
+  .tablet-blurred{
+    position: relative;
+    top: 80px;
+    left: -180px;
+  }
+  .tablet-green{
+    position: relative;
+    top: -120px;
+    left: -190px;
+  }
+  .tablet-rose{
+    position: relative;
+    top: -100px;
+    left: -50px;
+  }
+  .tablet-blue{
+    position: relative;
+    top: 80px;
+    right: -180px;
+  }
+  .tablet-white{
+    position: relative;
+    top: -80px;
+    right: -220px;
+  }
 }
