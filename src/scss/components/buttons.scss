@@ -16,7 +16,7 @@
   transition: box-shadow 0.3s;
   cursor: pointer;
   &.card {
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.9);
     color: $primary;
   }
   &.control {
@@ -30,12 +30,12 @@
     text-align: center;
     &.next {
       &::before {
-        content: url("../assets/images/next.svg");
+        content: url("../assets/svg/next.svg");
       }
     }
     &.prev {
       &::before {
-        content: url("../assets/images/prev.svg");
+        content: url("../assets/svg/prev.svg");
       }
     }
     &:focus {
