@@ -26,7 +26,7 @@ export default class Carousel {
         <h3>${product.title} x${product.totalInventory}</h3>
         <div class="content-rating">
           <p class="stars">${this.renderStars(product.tags)} <span class="tags">(${product.tags.filter(tag => !isNaN(tag)).join(', ')})</span></p>
-          <p>  ${this.getCurrencySymbol(product.prices.min.currencyCode)} ${this.formatPrice(product.prices.min.amount)}</p>
+          <p>${this.getPriceDisplay(product.prices)}</p>
         </div>
       `;
       this.container.appendChild(productElement);
@@ -36,20 +36,27 @@ export default class Carousel {
     this.prevButton.addEventListener("click", () => this.scrollPrev());
   }
 
+  getPriceDisplay(prices) {
+    if (prices.min.amount === prices.max.amount) {
+      return `<span class="price">${this.getCurrencySymbol(prices.min.currencyCode)} ${this.formatPrice(prices.min.amount)}</span>`;
+    } else {
+      return `
+        <span class="price">${this.getCurrencySymbol(prices.max.currencyCode)} ${this.formatPrice(prices.max.amount)}</span>
+        <span class="price old-price"> ${this.getCurrencySymbol(prices.min.currencyCode)} ${this.formatPrice(prices.min.amount)}</span>
+      `;
+    }
+  }
+
   formatPrice(amount) {
-    // Aquí puedes aplicar cualquier lógica adicional de formateo que necesites
-    // Por ejemplo, redondear, añadir decimales, etc.
-    return parseFloat(amount).toFixed(2); // Redondeamos a dos decimales
+    return parseFloat(amount).toFixed(2);
   }
 
   getCurrencySymbol(currencyCode) {
-    // Función para obtener el símbolo de la moneda según el código
     switch (currencyCode) {
       case "EUR":
         return "€";
-      // Puedes añadir más casos para otras monedas si es necesario
       default:
-        return currencyCode; // En caso de no encontrar una coincidencia, devolver el código de moneda original
+        return currencyCode;
     }
   }
 
@@ -62,10 +69,10 @@ export default class Carousel {
   
     let starsHTML = '';
     for (let i = 0; i < starsCount; i++) {
-      starsHTML += `<img class="star-icon" src="https://svgshare.com/i/17Wx.svg" alt="star">`; // Estrella llena
+      starsHTML += `<img class="star-icon" src="https://svgshare.com/i/17Wx.svg" alt="star">`; 
     }
     for (let i = starsCount; i < 5; i++) {
-      starsHTML += `<img  src="https://svgshare.com/i/17Wn.svg" alt="star">`; // Estrella vacía
+      starsHTML += `<img  src="https://svgshare.com/i/17Wn.svg" alt="star">`;
     }
     return starsHTML;
   }
