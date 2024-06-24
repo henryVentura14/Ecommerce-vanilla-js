@@ -22,7 +22,7 @@ export default class Carousel {
         <div class="content-img">
           <img src="${product.featuredImage.url}" alt="${product.title}">
         </div>
-        ${`<div class="discount-badge"> -2${discount}%</div>` }
+        ${discount > 0 ? `<div class="discount-badge"> -${discount}%</div>` : ""}
         <div class="content-btn">
           <button class="btn card">Add to cart</button>
         </div>
