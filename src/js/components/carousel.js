@@ -41,8 +41,8 @@ export default class Carousel {
       return `<span class="price">${this.getCurrencySymbol(prices.min.currencyCode)} ${this.formatPrice(prices.min.amount)}</span>`;
     } else {
       return `
-        <span class="price">${this.getCurrencySymbol(prices.max.currencyCode)} ${this.formatPrice(prices.max.amount)}</span>
-        <span class="price old-price"> ${this.getCurrencySymbol(prices.min.currencyCode)} ${this.formatPrice(prices.min.amount)}</span>
+        <span class="price old-price">${this.getCurrencySymbol(prices.max.currencyCode)} ${this.formatPrice(prices.max.amount)}</span>
+        <span class="price"> ${this.getCurrencySymbol(prices.min.currencyCode)} ${this.formatPrice(prices.min.amount)}</span>
       `;
     }
   }
