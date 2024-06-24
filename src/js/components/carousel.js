@@ -16,10 +16,13 @@ export default class Carousel {
     this.products.forEach((product) => {
       const productElement = document.createElement("div");
       productElement.className = "product";
+      const discount = this.calculateDiscount(product.prices);
+
       productElement.innerHTML = `
         <div class="content-img">
           <img src="${product.featuredImage.url}" alt="${product.title}">
         </div>
+        ${`<div class="discount-badge"> -2${discount}%</div>` }
         <div class="content-btn">
           <button class="btn card">Add to cart</button>
         </div>
@@ -34,6 +37,15 @@ export default class Carousel {
 
     this.nextButton.addEventListener("click", () => this.scrollNext());
     this.prevButton.addEventListener("click", () => this.scrollPrev());
+  }
+
+  calculateDiscount(prices) {
+    const maxPrice = parseFloat(prices.max.amount);
+    const minPrice = parseFloat(prices.min.amount);
+    if (maxPrice > minPrice) {
+      return Math.round(((maxPrice - minPrice) / maxPrice) * 100);
+    }
+    return 0;
   }
 
   getPriceDisplay(prices) {
