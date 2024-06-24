@@ -1,3 +1,4 @@
+import { EMAIL_PATTERN } from '../constants.js';
 class NewsletterForm {
   constructor(formId, emailId, messageId) {
     this.form = document.getElementById(formId);
@@ -12,16 +13,15 @@ class NewsletterForm {
   handleSubmit(event) {
     event.preventDefault();
     const email = this.emailInput.value;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (emailPattern.test(email)) {
+    if (EMAIL_PATTERN && EMAIL_PATTERN.test(email)) {
       this.displayMessage('Thank you for subscribing!', 'success');
     } else {
       this.displayMessage('Please enter a valid email address.', 'error');
     }
   }
 
-  displayMessage(message,type) {
+  displayMessage(message, type) {
     this.messageElement.textContent = message;
     this.messageElement.classList.remove('success', 'error');
     this.messageElement.classList.add(type);
