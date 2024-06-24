@@ -6,6 +6,7 @@
   scroll-snap-type: x mandatory;
   height: 580px;
   .product {
+    position: relative;
     flex: 0 0 auto;
     margin-right: 10px;
     margin-left: 10px;
@@ -96,6 +97,20 @@
         @include flex(flex-start, flex-start, column);
         padding: 0px;
       }
+    }
+
+    .discount-badge {
+      position: absolute;
+      font-family: "NeogroteskEssRegular";
+      top: 10px;
+      right: 10px;
+      background-color: $warning;
+      color: $dark;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 14px;
+      font-weight: bold;
+      color: $dark;
     }
   }
 }
