@@ -1,0 +1,285 @@
+ {
+    "nodes": [
+        {
+            "id": "gid://shopify/Product/8141368164662",
+            "title": "The Complete Snowboard",
+            "tags": [
+                "32",
+                "Premium",
+                "Snow",
+                "Snowboard",
+                "Sport",
+                "Winter"
+            ],
+            "totalInventory": 35,
+            "tracksInventory": true,
+            "featuredImage": {
+                "url": "https://cdn.shopify.com/s/files/1/0730/1113/4774/products/image22.png?v=1676927632"
+            },
+            "prices": {
+                "max": {
+                    "amount": "699.95",
+                    "currencyCode": "EUR"
+                },
+                "min": {
+                    "amount": "699.95",
+                    "currencyCode": "EUR"
+                }
+            }
+        },
+        {
+            "id": "gid://shopify/Product/8141368361270",
+            "title": "The Minimal Snowboard",
+            "tags": [
+                "80"
+            ],
+            "totalInventory": 49,
+            "tracksInventory": true,
+            "featuredImage": {
+                "url": "https://cdn.shopify.com/s/files/1/0730/1113/4774/products/image22_4ad46bdf-b6cd-45f8-a3ac-ff126e0b53b2.png?v=1676927735"
+            },
+            "prices": {
+                "max": {
+                    "amount": "885.95",
+                    "currencyCode": "EUR"
+                },
+                "min": {
+                    "amount": "885.95",
+                    "currencyCode": "EUR"
+                }
+            }
+        },
+        {
+            "id": "gid://shopify/Product/8141368295734",
+            "title": "The 3p Fulfilled Snowboard",
+            "tags": [
+                "120",
+                "Accessory",
+                "Sport",
+                "Winter"
+            ],
+            "totalInventory": 19,
+            "tracksInventory": true,
+            "featuredImage": {
+                "url": "https://cdn.shopify.com/s/files/1/0730/1113/4774/products/image22_1.png?v=1676927534"
+            },
+            "prices": {
+                "max": {
+                    "amount": "2629.95",
+                    "currencyCode": "EUR"
+                },
+                "min": {
+                    "amount": "2629.95",
+                    "currencyCode": "EUR"
+                }
+            }
+        },
+        {
+            "id": "gid://shopify/Product/8141368262966",
+            "title": "The Multi-location Snowboard",
+            "tags": [
+                "70",
+                "Premium",
+                "Snow",
+                "Snowboard",
+                "Sport",
+                "Winter"
+            ],
+            "totalInventory": 99,
+            "tracksInventory": true,
+            "featuredImage": {
+                "url": "https://cdn.shopify.com/s/files/1/0730/1113/4774/products/image22_1_530ba195-743f-4857-a7dd-c99c107052eb.png?v=1676927748"
+            },
+            "prices": {
+                "max": {
+                    "amount": "729.95",
+                    "currencyCode": "EUR"
+                },
+                "min": {
+                    "amount": "729.95",
+                    "currencyCode": "EUR"
+                }
+            }
+        },
+        {
+            "id": "gid://shopify/Product/8141368492342",
+            "title": "The Hidden Snowboard",
+            "tags": [
+                "460",
+                "Premium",
+                "Snow",
+                "Snowboard",
+                "Sport",
+                "Winter"
+            ],
+            "totalInventory": 50,
+            "tracksInventory": true,
+            "featuredImage": {
+                "url": "https://cdn.shopify.com/s/files/1/0730/1113/4774/products/image22_1_7619433d-c328-4d03-a4f6-aa12a46368a7.png?v=1676927723"
+            },
+            "prices": {
+                "max": {
+                    "amount": "749.95",
+                    "currencyCode": "EUR"
+                },
+                "min": {
+                    "amount": "749.95",
+                    "currencyCode": "EUR"
+                }
+            }
+        },
+        {
+            "id": "gid://shopify/Product/8141368426806",
+            "title": "The Draft Snowboard",
+            "tags": [
+                "55"
+            ],
+            "totalInventory": 20,
+            "tracksInventory": true,
+            "featuredImage": {
+                "url": "https://cdn.shopify.com/s/files/1/0730/1113/4774/products/image25.png?v=1676927706"
+            },
+            "prices": {
+                "max": {
+                    "amount": "2629.95",
+                    "currencyCode": "EUR"
+                },
+                "min": {
+                    "amount": "2629.95",
+                    "currencyCode": "EUR"
+                }
+            }
+        },
+        {
+            "id": "gid://shopify/Product/8141368394038",
+            "title": "The Archived Snowboard",
+            "tags": [
+                "320",
+                "Archived",
+                "Premium",
+                "Snow",
+                "Snowboard",
+                "Sport",
+                "Winter"
+            ],
+            "totalInventory": 50,
+            "tracksInventory": true,
+            "featuredImage": {
+                "url": "https://cdn.shopify.com/s/files/1/0730/1113/4774/products/image22_2_b46d7c2d-b2fa-439a-b1ce-36ab050cd1b2.png?v=1676927647"
+            },
+            "prices": {
+                "max": {
+                    "amount": "629.95",
+                    "currencyCode": "EUR"
+                },
+                "min": {
+                    "amount": "629.95",
+                    "currencyCode": "EUR"
+                }
+            }
+        },
+        {
+            "id": "gid://shopify/Product/8141368230198",
+            "title": "The Multi-managed Snowboard",
+            "tags": [
+                "210",
+                "Premium",
+                "Snow",
+                "Snowboard",
+                "Sport",
+                "Winter"
+            ],
+            "totalInventory": 100,
+            "tracksInventory": true,
+            "featuredImage": {
+                "url": "https://cdn.shopify.com/s/files/1/0730/1113/4774/products/image25_1_c58dfa13-fd24-43e3-8108-aea4e43864e0.png?v=1676927763"
+            },
+            "prices": {
+                "max": {
+                    "amount": "629.95",
+                    "currencyCode": "EUR"
+                },
+                "min": {
+                    "amount": "629.95",
+                    "currencyCode": "EUR"
+                }
+            }
+        },
+        {
+            "id": "gid://shopify/Product/8141368197430",
+            "title": "The Collection Snowboard: Hydrogen",
+            "tags": [
+                "180",
+                "190",
+                "Accessory",
+                "Sport",
+                "Winter"
+            ],
+            "totalInventory": 50,
+            "tracksInventory": true,
+            "featuredImage": {
+                "url": "https://cdn.shopify.com/s/files/1/0730/1113/4774/products/image22_83943c83-edb0-4b44-bd38-98495eff167c.png?v=1676927659"
+            },
+            "prices": {
+                "max": {
+                    "amount": "600.0",
+                    "currencyCode": "EUR"
+                },
+                "min": {
+                    "amount": "600.0",
+                    "currencyCode": "EUR"
+                }
+            }
+        },
+        {
+            "id": "gid://shopify/Product/8141368131894",
+            "title": "The Collection Snowboard: Oxygen",
+            "tags": [
+                "350",
+                "Accessory",
+                "Sport",
+                "Winter"
+            ],
+            "totalInventory": 50,
+            "tracksInventory": true,
+            "featuredImage": {
+                "url": "https://cdn.shopify.com/s/files/1/0730/1113/4774/products/image22_2_d537f9ae-50f5-4ee2-bc69-e2639599de21.png?v=1676927613"
+            },
+            "prices": {
+                "max": {
+                    "amount": "1025.0",
+                    "currencyCode": "EUR"
+                },
+                "min": {
+                    "amount": "1025.0",
+                    "currencyCode": "EUR"
+                }
+            }
+        },
+        {
+            "id": "gid://shopify/Product/8141368099126",
+            "title": "The Collection Snowboard: Liquid",
+            "tags": [
+                "320",
+                "Accessory",
+                "Sport",
+                "Winter"
+            ],
+            "totalInventory": 50,
+            "tracksInventory": true,
+            "featuredImage": {
+                "url": "https://cdn.shopify.com/s/files/1/0730/1113/4774/products/image25_1.png?v=1676927676"
+            },
+            "prices": {
+                "max": {
+                    "amount": "749.95",
+                    "currencyCode": "EUR"
+                },
+                "min": {
+                    "amount": "749.95",
+                    "currencyCode": "EUR"
+                }
+            }
+        }
+    ]
+}

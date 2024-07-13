@@ -1,6 +1,7 @@
+import all from "../all.json";
 export default class Carousel {
   constructor(products) {
-    this.products = products;
+    this.products = products ?? all.nodes;
     this.container = document.querySelector(".products-carousel");
     this.currentIndex = 0;
     this.totalProducts = this.products.length;
