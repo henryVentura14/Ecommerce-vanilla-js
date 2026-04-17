@@ -1,20 +1,18 @@
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/js/index.js',
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'public'),
+        filename: 'app.bundle.js',
     },
     module: {
         rules: [
             {
-                test: /\.json$/,
-                use: 'json-loader',
-                type: 'javascript/auto',
+                test: /\.s[ac]ss$/i,
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
-            // other rules can be added here
         ],
     },
     plugins: [
