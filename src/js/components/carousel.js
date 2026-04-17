@@ -1,4 +1,7 @@
 import all from "../all.json";
+import starIcon from "../../assets/svg/star.svg";
+import starOutlineIcon from "../../assets/svg/star-outline.svg";
+
 export default class Carousel {
   constructor(products) {
     this.products = products ?? all.nodes;
@@ -82,10 +85,10 @@ export default class Carousel {
   
     let starsHTML = '';
     for (let i = 0; i < starsCount; i++) {
-      starsHTML += `<img class="star-icon" src="https://svgshare.com/i/17Wx.svg" alt="star">`; 
+      starsHTML += `<img class="star-icon" src="${starIcon}" alt="star">`; 
     }
     for (let i = starsCount; i < 5; i++) {
-      starsHTML += `<img  src="https://svgshare.com/i/17Wn.svg" alt="star">`;
+      starsHTML += `<img class="star-icon" src="${starOutlineIcon}" alt="star">`;
     }
     return starsHTML;
   }
